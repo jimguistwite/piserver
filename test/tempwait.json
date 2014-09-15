@@ -1,0 +1,5 @@
+{"synchronized": true, "ops": [
+  {"op":"gettemp", "id":"28-000006050a87"},
+  {"op":"wait",    "duration":500},
+  {"op":"gettemp", "id":"28-00000607814a"}
+]}

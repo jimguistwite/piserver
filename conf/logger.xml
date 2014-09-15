@@ -1,0 +1,34 @@
+<configuration>
+    
+  <conversionRule conversionWord="coloredLevel" converterClass="play.api.Logger$ColoredLevel" />
+
+  <turboFilter class="ch.qos.logback.classic.turbo.DuplicateMessageFilter" />
+
+  <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${application.home}/logs/piserver.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>${application.home}/logs/piserver-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <maxHistory>6</maxHistory>
+      <cleanHistoryOnStart>true</cleanHistoryOnStart>
+      <timeBasedFileNamingAndTriggeringPolicy
+            class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <!-- or whenever the file size reaches 100MB -->
+        <maxFileSize>20MB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%date - [%level] - from %logger in %thread %n%message%n%xException%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="ch" level="WARN"/>
+  <logger name="play" level="DEBUG" />
+  <logger name="application" level="TRACE" />
+  <logger name="models" level="TRACE" />
+
+  <root level="TRACE">
+    <appender-ref ref="ROLLING" />
+  </root>
+  
+</configuration>

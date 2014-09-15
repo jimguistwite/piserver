@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                     controllers.Application.index
+GET         /sysinfo              controllers.Application.systemInfo
+GET         /memoryinfo           controllers.Application.memoryInfo
+GET         /osinfo               controllers.Application.osInfo
+GET         /javainfo             controllers.Application.javaInfo
+GET         /networkinfo          controllers.Application.networkInfo
+GET         /gpiostate            controllers.Application.gpioState
+POST        /performOps          controllers.Application.performOps
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file         controllers.Assets.at(path="/public", file)
