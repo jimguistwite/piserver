@@ -1,0 +1,12 @@
+{"synchronized":true,
+ "ops":[
+   {"op":"setpin", "pin":"relay2", "high":true},
+   {"op":"wait", "duration":500},
+   {"op":"setpin", "pin":"relay2", "high":false},
+   {"op":"wait", "duration":500},
+   {"op":"setpin", "pin":"relay1", "high":true},
+   {"op":"wait", "duration":500},
+   {"op":"setpin", "pin":"relay1", "high":false},
+   {"op":"wait", "duration":500}
+ ]
+}
