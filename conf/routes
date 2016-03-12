@@ -9,8 +9,23 @@ GET         /memoryinfo           controllers.Application.memoryInfo
 GET         /osinfo               controllers.Application.osInfo
 GET         /javainfo             controllers.Application.javaInfo
 GET         /networkinfo          controllers.Application.networkInfo
+
+POST        /performOps           controllers.Application.performOps
+
+POST        /x10                  controllers.Application.x10
+GET         /x10                  controllers.Application.x10State
+GET         /x10/:id              controllers.Application.x10StateForItem(id: String)
+GET         /temp/:id             controllers.Application.temp(id: String)
+GET         /temp                 controllers.Application.getalltemp
+POST        /register             controllers.Application.register
+
+POST        /gpiotoggle           controllers.Application.gpioToggle
 GET         /gpiostate            controllers.Application.gpioState
-POST        /performOps          controllers.Application.performOps
+GET         /gpiostate/:id        controllers.Application.gpioStateForItem(id: String)
+GET         /itachnet             controllers.Application.getITachNet
+POST        /sendir               controllers.Application.sendIr
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file         controllers.Assets.at(path="/public", file)
